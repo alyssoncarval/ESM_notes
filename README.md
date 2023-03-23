@@ -165,16 +165,6 @@ Modelos de Software
 Um modelo oferece uma representação em mais alto nível de um sistema do que o seu código fonte. O objetivo é permitir que desenvolvedores possam analisar propriedades e características essenciais de um sistema, de modo mais fácil e rápido, sem ter que mergulhar nos detalhes do código. Os modelos são uma forma de documentar o código de um sistema. 
 
 Por exemplo, UML (Unified Modelling Language) é uma notação que define mais de uma dezena de diagramas gráficos para representar propriedades estruturais e comportamentais de um sistema.  
-
-Cliente 
-- Id: integer 
-• name: string 
-- especial: boolean 
-co Cari a 
-- saldo: double 
-+ getSaIdoC: double 
-+ getNomeClienteC: string 
-Data): string 
  
 Qualidade de Software 
 
