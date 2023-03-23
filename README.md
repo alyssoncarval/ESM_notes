@@ -1,6 +1,5 @@
 # Engenharia de Software Moderna
 
-About the book
 Modern Software Engineering is a textbook intended for undergraduate students in Computing. It can also be read by professionals seeking basic knowledge on the following topics:
 
 - Agile methods such as Scrum, XP and Kanban.
