@@ -12,4 +12,8 @@ Modern Software Engineering is a textbook intended for undergraduate students in
 
 All material from the book can be accessed [here](https://engsoftmoderna.info/).
 
-[Capítulo 1 Introdução](https://github.com/Universidade-Livre/ciencia-da-computacao#sum%C3%A1rio)
+# Summary
+
+Capítulo 1 - Introdução
+
+# Capítulo 1 - Introdução
