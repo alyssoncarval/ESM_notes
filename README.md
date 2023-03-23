@@ -1,18 +1,18 @@
 # Engenharia de Software Moderna
 
-Modern Software Engineering is a textbook intended for undergraduate students in Computing. It can also be read by professionals seeking basic knowledge on the following topics:
+Engenharia de Software Moderna é um livro-texto destinado a alunos de cursos de graduação em Computação. Pode ser lido também por profissionais que buscam conhecimento básico sobre os seguintes temas:
 
-- Agile methods such as Scrum, XP and Kanban.
-- Agile requirements gathering, including user stories, - MVPs and A/B tests.
-- Software Design, dealing with design properties, design principles and standards.
-- Software Architecture, including patterns like MVC, microservices and publish/subscribe.
-- Software Testing, with emphasis on unit tests, testability, coverage and TDD.
-- Refactoring, with real examples of refactorings and code smells.
-- DevOps, including version control, continuous integration and deployment.
+- Métodos ágeis, como Scrum, XP e Kanban.
+- Levantamento ágil de requisitos, incluindo histórias de usuários, MVPs e testes A/B.
+- Projeto de Software, tratando de propriedades de projeto, princípios e padrões de projeto.
+- Arquitetura de Software, incluindo padrões como MVC, microsserviços e publish/subscribe.
+- Testes de Software, com ênfase em testes de unidade, testabilidade, cobertura e TDD.
+- Refactoring, com exemplos reais de refactorings e code smells.
+- DevOps, incluindo controle de versões, integração e deployment contínuo.
 
-All material from the book can be accessed [here](https://engsoftmoderna.info/).
+Todo o material do livro pode ser acessado [aqui](https://engsoftmoderna.info/).
 
-# Summary
+# Sumário
 
 [Capítulo 1 - Introdução](https://github.com/alyssoncarval/ESM_notes#cap%C3%ADtulo-1---introdu%C3%A7%C3%A3o)
 
