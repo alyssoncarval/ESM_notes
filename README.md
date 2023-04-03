@@ -477,7 +477,236 @@ Para concluir, é importante mencionar que duas práticas ágeis são atualmente
 
 (1) Times pequenos, pois o esforço de sincronização cresce muito quando os times são compostos por dezenas de membros. 
 
-(2) Iterações (ou sprints), mesmo que com duração maior do que aquela típica de métodos ágeis. Por exemplo, iterações com duração de dois ou três meses, em vez de iterações com menos de 30 dias. Na verdade, entre o surgimento de Waterfall e de métodos ágeis, alguns métodos iterativos foram propostos, isto é, métodos com pontos de validação ao longo do desenvolvimento. Na próxima seção, iremos estudar dois desses métodos. 
+(2) Iterações (ou sprints), mesmo que com duração maior do que aquela típica de métodos ágeis. Por exemplo, iterações com duração de dois ou três meses, em vez de iterações com menos de 30 dias. Na verdade, entre o surgimento de Waterfall e de métodos ágeis, alguns métodos iterativos foram propostos, isto é, métodos com pontos de validação ao longo do desenvolvimento. Na próxima seção, iremos estudar dois desses métodos.
+
+# Capítulo 3 - Requisitos
+
+The hardest single part of building a software system is deciding precisely what to 
+build. — Frederick Brooks 
+ 
+
+Introdução 
+
+ 
+
+Requisitos definem o que um sistema deve fazer e sob quais restrições. Requisitos relacionados com a primeira parte dessa definição — o que um sistema deve fazer, ou seja, suas funcionalidades — são chamados de Requisitos Funcionais. Já os requisitos relacionados com a segunda parte — sob que restrições — são chamados de Requisitos Não-Funcionais. 
+
+ 
+
+Requisitos funcionais, na maioria das vezes, são especificados em linguagem natural. Por outro lado, requisitos não-funcionais são especificados de forma quantitativa usando-se métricas. 
+
+ 
+
+Requisito Não-Funcional 
+Desempenho 
+Espaço 
+Confiabilidade 
+Robustez 
+Métrica 
+Transações por segundo, tempo de 
+resposta, latência, vazão (throughput) 
+Uso de disco, RAM, cache 
+% de disponibilidade, tempo médio 
+entre falhas (MTBF) 
+Tempo para recuperar o sistema após 
+uma falha (MTTR); probabilidade de 
+perda de dados após uma falha 
+Usabilidade 
+Portabilidade 
+Tempo de treinamento de usuários 
+% de linhas de código portáveis 
+ 
+
+O uso de métricas evita especificações genéricas, como o sistema deve ser rápido e ter alta disponibilidade. Em vez disso, é preferível definir que o sistema deve ter 99,99% de disponibilidade e que 99% de todas as transações realizadas em qualquer janela de 5 minutos devem ter um tempo de resposta máximo de 1 segundo. 
+
+ 
+
+Alguns autores, como Ian Sommerville, também classificam requisitos em requisitos de usuário e requisitos de sistema. Requisitos de usuários são requisitos de mais alto nível, escritos por usuários, normalmente em linguagem natural e sem entrar em detalhes técnicos. Já requisitos de sistema são técnicos, precisos e escritos pelos próprios desenvolvedores. Normalmente, um requisito de usuário é expandido em um conjunto de requisitos de sistema. 
+
+ 
+
+Engenharia de Requisitos é o nome que se dá ao conjunto de atividades relacionadas com a descoberta, análise, especificação e manutenção dos requisitos de um sistema. O termo engenharia é usado para reforçar que essas atividades devem ser realizadas de modo sistemático, ao longo de todo o ciclo de vida de um sistema e, sempre que possível, valendo-se de técnicas bem definidas. 
+
+ 
+
+As atividades relacionadas com a descoberta e entendimento dos requisitos de um sistema são chamadas de Elicitação de Requisitos. Segundo o Dicionário Houaiss, elicitar (ou eliciar) significa fazer sair, expulsar, expelir. No nosso contexto, o termo designa as interações dos desenvolvedores de um sistema com os seus stakeholders, com o objetivo de fazer sair, isto é, descobrir e entender os principais requisitos do sistema que se pretende construir. 
+
+ 
+
+Diversas técnicas podem ser usadas para elicitação de requisitos, incluindo entrevistas com stakeholders, aplicação de questionários, leitura de documentos e formulários da organização que está contratando o sistema, realização de workshops com os usuários, implementação de protótipos e análise de cenários de uso. Existem ainda técnicas de elicitação de requisitos baseadas em estudos etnográficos. O termo tem sua origem na Antropologia, onde designa o estudo de uma cultura em seu ambiente natural (etnos, em grego, significa povo ou cultura).  
+
+ 
+
+Etnografia designa a técnica de elicitação de requisitos que recomenda que o desenvolvedor se integre ao ambiente de trabalho dos stakeholders e observe — normalmente, por alguns dias — como ele desenvolve suas atividades. Veja que essa observação é silenciosa, isto é, o desenvolvedor não interfere e opina sobre as tarefas e eventos que estão sendo observados. 
+
+ 
+
+Após elicitados, os requisitos devem ser: (1) documentados, (2) verificados e validados e (3) priorizados. 
+
+ 
+
+No caso de desenvolvimento ágil, a documentação de requisitos é feita de forma simplificada, por meio de histórias do usuário. Por outro lado, em alguns projetos, ainda se exige um Documento de Especificação de Requisitos, no qual todos os requisitos do software que se pretende construir — incluindo requisitos funcionais e não-funcionais — são documentados em linguagem natural (português, inglês, etc.).  
+
+ 
+
+Na década de 90, chegou-se a propor um padrão para Documentos de Especificação de Requisitos, denominado Padrão IEEE 830. Ele foi proposto no contexto de Processos Waterfall, isto é, processos que possuem uma longa fase inicial de levantamento de requisitos. As principais seções de um documento de requisitos no padrão IEEE 830 são mostradas na figura da próxima página. 
+
+ 
+
+ 
+
+* Requisitos Relacionados com Interfaces Externas 
+Interfaces com o Usuário 
+* Interfaces com Hardware 
+Interfaces com Outros Sistemas de Software 
+Interfaces de Comunicação 
+* Requisitos Funcionais 
+* Requisito Funcional #1 
+* Requisito Funcional #2 
+* Requisitos de Desempenho 
+* Requisitos de Projeto 
+* Outros Requisitos 
+ 
+
+Após sua especificação, os requisitos devem ser verificados e validados. O objetivo é garantir que eles estejam corretos, precisos, completos, consistentes e verificáveis, conforme discutido a seguir. 
+
+ 
+
+Requisitos devem estar corretos. Um contra-exemplo é a especificação de forma incorreta da fórmula para remuneração das cadernetas de poupança em um sistema bancário. Evidentemente, uma imprecisão na descrição dessa fórmula irá resultar em prejuízos para o banco ou para seus clientes. 
+
+Requisitos devem ser precisos, isto é, não devem ser ambíguos. No entanto, ambiguidade ocorre com mais frequência do que gostaríamos quando usamos linguagem natural. Por exemplo, considere essa condição: para ser aprovado um aluno precisa obter 60 pontos no semestre ou 60 pontos no Exame Especial e ser frequente. Veja que ela admite duas interpretações. A primeira é a seguinte: (60 pontos no semestre ou 60 pontos no Exame Especial) e ser frequente. Porém, pode-se interpretar também como: 60 pontos no semestre ou (60 pontos no Exame Especial e ser frequente). Conforme você observou, tivemos que usar parênteses para eliminar a ambiguidade na ordem das operações e e ou. 
+
+Requisitos devem ser completos. Isto é, não podemos esquecer de especificar certos requisitos, principalmente se eles forem importantes no sistema que se pretende construir. 
+
+Requisitos devem ser consistentes. Um contra-exemplo ocorre quando um stakeholder afirma que a disponibilidade do sistema deve ser 99,9% e outro considera que 90% já é suficiente. 
+
+Requisitos devem ser verificáveis, isto é, deve ser possível testar se os requisitos estão sendo atendidos. Um contra-exemplo é um requisito que apenas requer que o sistema seja amigável. Como os desenvolvedores vão saber se estão atendendo a essa expectativa dos clientes? 
+
+ 
+
+Por fim, os requisitos devem ser priorizados. Às vezes, o termo requisitos é interpretado de forma literal, isto é, como uma lista de funcionalidades e restrições obrigatórias em sistemas de software. No entanto, nem sempre aquilo que é especificado pelos clientes será implementado nas releases iniciais. Por exemplo, restrições de prazo e custos podem postergar a implementação de certos requisitos. 
+
+ 
+
+Chama-se de rastreabilidade (traceability) a capacidade de dado um trecho de código identificar os requisitos implementados por ele e vice-versa (isto é, dado um requisito, identificar os trechos de código que o implementam). 
+
+ 
+
+Antes de concluir, é importante mencionar que Engenharia de Requisitos é uma atividade multidisciplinar e complexa. Por exemplo, fatores políticos podem fazer com que certos stakeholders não colaborem com a elicitação de requisitos que ameacem seu poder e status na organização. Outros stakeholders simplesmente podem não ter tempo para se reunir com os desenvolvedores, a fim de explicar os requisitos do sistema. A especificação de requisitos pode ser impactada ainda por uma barreira cognitiva entre os stakeholders e desenvolvedores. Devido a essa barreira, os desenvolvedores podem não entender a linguagem e os termos usados pelos stakeholders. 
+
+ 
+
+Histórias de Usuários 
+
+ 
+
+Conforme sugerido por Ron Jeffries em um livro sobre desenvolvimento ágil, uma história de usuário é composta por três partes, todas começando com a letra C e que vamos documentar usando a seguinte equação: 
+
+ 
+
+História de Usuário 
+Cartão + Conversas + Confirmação 
+ 
+
+Cartão, usado pelos clientes para escrever, na sua linguagem e em poucas sentenças, uma funcionalidade que esperam ver implementada no sistema. 
+
+Conversas entre clientes e desenvolvedores, por meio das quais os clientes explicam e detalham o que escreveram em cada cartão. Como dito antes, a visão de métodos ágeis sobre Engenharia de Requisitos é pragmática: como especificações textuais e completas de requisitos não funcionam, elas foram eliminadas e substituídas por comunicação verbal entre desenvolvedores e clientes. Por isso, métodos ágeis — conforme estudamos no Capítulo 2 — incluem nos times de desenvolvimento um representante dos clientes, que participa do time em tempo integral. 
+
+Confirmação, que é basicamente um teste de alto nível — de novo especificado pelo cliente — para verificar se a história foi implementada conforme esperado. Portanto, não se trata de um teste automatizado, como um teste de unidades, por exemplo. Mas a descrição dos cenários, exemplos e casos de teste que o cliente irá usar para confirmar a implementação da história. Por isso, são também chamados de testes de aceitação de histórias. Eles devem ser escritos o quanto antes, preferencialmente no início de uma iteração. Alguns autores recomendam escrevê-los no verso dos cartões da história. 
+
+ 
+
+Resumindo, quando usamos histórias de usuários, atividades de Engenharia de Requisitos ocorrem ao longo de todo o desenvolvimento, em praticamente todos os dias de uma iteração. Consequentemente, troca-se um documento de requisitos com centenas de páginas por conversas frequentes, nas quais o representante dos clientes explica os requisitos para os desenvolvedores da equipe. Prosseguindo na comparação, histórias de usuários favorecem comunicação verbal, em vez de comunicação escrita. E por isso elas são também compatíveis com os princípios do Manifesto Ágil, que reproduzimos a seguir:  
+
+(1) indivíduos e interações, mais do que processos e ferramentas;  
+
+(2) software em funcionamento, mais do que documentação abrangente;  
+
+(3) colaboração com o cliente, mais do que negociação de contratos;  
+
+(4) resposta a mudanças, mais do que seguir um plano. 
+
+ 
+
+Boas histórias devem possuir as seguintes características (cujas iniciais em inglês dão origem ao acrônimo INVEST): 
+
+ 
+
+Histórias devem ser independentes: dadas duas histórias X e Y, deve ser possível implementá-las em qualquer ordem. Para isso, idealmente, não devem existir dependências entre elas. 
+
+Histórias devem ser abertas para negociação. Frequentemente, costuma-se dizer que histórias (o cartão) são convites para conversas entre clientes e desenvolvedores durante um sprint. Logo, ambos devem estar abertos a ceder em suas opiniões durante essas conversas. Os desenvolvedores devem estar abertos para implementar detalhes que não estão expressos ou que não cabem nos cartões da história. E os clientes devem aceitar argumentos técnicos vindos dos desenvolvedores, por exemplo sobre a inviabilidade de implementar algum detalhe da história conforme inicialmente vislumbrado. 
+
+Histórias devem agregar valor para o negócio dos clientes. Histórias são propostas, escritas e priorizadas pelos clientes e de acordo com o valor que elas agregam ao seu negócio. Por isso, não existe a figura de uma história técnica, como a seguinte: o sistema deve ser implementado em JavaScript, usando React no front-end e Node.js no backend. 
+
+Deve ser viável estimar o tamanho de uma história. Por exemplo, quantos dias serão necessários para implementá-la. Normalmente, isso requer que a história seja pequena, como veremos no próximo item, e que os desenvolvedores tenham experiência na área do sistema. 
+
+Histórias devem ser sucintas e pequenas. Na verdade, até se admite histórias complexas e grandes, as quais são chamadas de épicos. Porém, elas ficam posicionadas no fundo do backlog, o que significa que ainda não se tem previsão de quando elas serão implementadas. Por outro lado, as histórias do topo do backlog e que, portanto, serão implementadas em breve, devem ser curtas e pequenas, para facilitar o entendimento e estimativa das mesmas. Assumindo-se que um sprint tem duração máxima de um mês, deve ser possível implementar as histórias do topo do backlog em menos de uma semana. 
+
+Histórias devem ser testáveis, isto é, elas devem ter critérios de aceitação objetivos. Como exemplo, podemos citar: o cliente pode pagar com cartões de crédito. Uma vez definidas as bandeiras de cartões de crédito que serão aceitas, essa história é testável. Por outro lado, a seguinte história é um contra-exemplo: um cliente não deve esperar muito para ter sua compra confirmada. Essa é uma história vaga e, portanto, com um critério de aceitação também vago. 
+
+ 
+
+Antes de começar a escrever histórias, recomenda-se listar os principais usuários que vão interagir com o sistema. Assim, evita-se que as histórias fiquem enviesadas e atendam às necessidades de apenas certos usuários. Definidos esses papéis de usuários (user roles), costuma-se escrever as histórias no seguinte formato: 
+
+ 
+
+Como um [papel de usuário], eu gostaria de [realizar algo com o sistema] 
+ 
+
+Tarefas para aquisição de conhecimento são chamadas de spikes. 
+
+ 
+
+Casos de Uso  
+
+ 
+
+Um caso de uso enumera os passos que um ator realiza em um sistema com um determinado objetivo. Na verdade, um caso de uso inclui duas listas de passos. A primeira representa o fluxo normal de passos necessários para concluir uma operação com sucesso. Ou seja, o fluxo normal descreve um cenário em que tudo dá certo, às vezes chamado também de fluxo feliz. Já a segunda lista inclui extensões do fluxo normal, as quais representam alternativas de execução de um passo normal ou então situações de erro. Ambos os fluxos — normal e extensões — serão posteriormente implementados no sistema. Mostra-se a seguir um caso de uso, referente a um sistema bancário e que especifica uma transferência entre contas, por um cliente do banco. 
+
+ 
+
+Transferir Valores entre Contas 
+Ator: Cliente do Banco 
+Fluxo normal: 
+- Autenticar Cliente (sublinhado) 
+2 - Cliente informa agência e conta de destino da transferência 
+3 - Cliente informa valor que deseja transferir 
+4 - Cliente informa a data em que pretende realizar a operação 
+5 - Sistema efetua transferência 
+6 - Sistema pergunta se o cliente deseja realizar uma nova transferência 
+Extensões: 
+2a - Se conta e agência incorretas, solicitar nova conta e agência 
+3a - Se valor acima do saldo atual, solicitar novo valor 
+4a - Data informada deve ser a data atual ou no máximo um ano a frente 
+5a - Se data informada é a data atual, transferir imediatamente 
+5b - Se data informada é uma data futura, agendar transferência 
+ 
+
+Vamos agora detalhar alguns pontos pendentes sobre casos de uso, usando o exemplo anterior. Primeiro, todo caso de uso deve ter um nome, cuja primeira palavra deve ser um verbo no infinitivo. Em seguida, ele deve informar o ator principal do caso de uso. Um caso de uso pode também incluir um outro caso de uso. No nosso exemplo, o passo 1 do fluxo normal inclui o caso de uso autenticar cliente. A sintaxe para tratar inclusões é simples: menciona-se o nome do caso de uso a ser incluído, que deve estar sublinhado. A semântica também é clara: todos os passos do caso de uso incluído devem ser executados antes de prosseguir. Ou seja, a semântica é a mesma de macros em linguagens de programação. 
+
+Por último, temos as extensões, as quais têm dois objetivos: 
+
+Detalhar algum passo do fluxo normal. No nosso exemplo, usamos extensões para especificar que a transferência deve ser imediatamente realizada se a data informada for a data corrente (extensão 5a). Caso contrário, temos um agendamento da transferência, que vai ocorrer na data futura que foi informada (extensão 5b). 
+
+Tratar erros, exceções, cancelamentos, etc. No nosso exemplo, usamos uma extensão para especificar que um novo valor deve ser solicitado, caso não exista saldo suficiente para a transferência (extensão 3a). 
+
+ 
+
+Algumas vezes, descrições de casos de uso incluem seções adicionais, tais como: (1) propósito do caso de uso; (2) pré-condições, isto é, o que deve ser verdadeiro antes da execução do caso de uso; (3) pós-condições, isto é, o que deve ser verdadeiro após a execução do caso de uso; e (4) uma lista de casos de uso relacionados. 
+
+Para concluir, seguem algumas boas práticas para escrita de casos de uso: 
+
+As ações de um caso de uso devem ser escritas em uma linguagem simples e direta. Escreva casos de uso como se estivesse no início do ensino fundamental é uma sugestão ouvida com frequência. Sempre que possível, use o ator principal como sujeito das ações, seguido de um verbo.  
+
+Casos de uso devem ser pequenos, com poucos passos, principalmente no fluxo normal, para facilitar o entendimento. Alistair Cockburn, autor de um conhecido livro sobre casos de uso, recomenda que eles devem ter no máximo nove passos no fluxo normal. Ele afirma literalmente o seguinte: eu raramente encontro um caso de uso bem escrito com mais de nove passos no cenário principal de sucesso. Portanto, se você estiver escrevendo um caso de uso e ele começar a ficar extenso, tente quebrá-lo em dois casos de uso menores. Outra alternativa consiste em agrupar alguns passos. 
+
+Casos de uso não são algoritmos escritos em pseudo-código. O nível de abstração é maior do que aquele necessário em algoritmos. Lembre-se de que os usuários do sistema cujos requisitos estão sendo documentados devem ser capazes de ler, entender e descobrir problemas em casos de uso. Por isso, evite os comandos se, repita até, etc. 
+
+Casos de uso não devem tratar de aspectos tecnológicos ou de design. Além disso, eles não precisam mencionar a interface que o ator principal usará para se comunicar com o sistema.  
+
+Evite casos de uso muito simples, como aqueles com apenas operações CRUD (Cadastrar, Recuperar, Atualizar ou Update e Deletar).  
+
+Padronize o vocabulário adotado nos casos de uso. Por exemplo, evite usar o nome Cliente em um caso de uso e Usuário em outro. No livro The Pragmatic Programmer, David Thomas e Andrew Hunt recomendam a criação de um glossário, isto é, um documento que lista os termos e vocabulário usados em um projeto. Segundo os autores, é muito difícil ser bem sucedido em um projeto no qual os usuários e desenvolvedores referem-se às mesmas coisas usando nomes diferentes e, pior ainda, referem-se a coisas diferentes pelo mesmo nome. 
 
 # Referências Bibliográficas
 
